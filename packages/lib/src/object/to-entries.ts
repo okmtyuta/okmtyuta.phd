@@ -1,5 +1,6 @@
+// biome-ignore lint/suspicious/noExplicitAny:
 export const toEntries = <T extends Record<string, any>>(
-  record: T
+	record: T,
 ): [keyof T, T[keyof T]][] => {
-  return Object.entries(record)
+	return Object.entries(record)
 }

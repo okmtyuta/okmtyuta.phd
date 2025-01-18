@@ -1,41 +1,39 @@
 {
-  "name": "@okmtyuta/packages.theme.okmtyuta.phd",
-  "version": "0.1.33",
-  "type": "module",
-  "main": "./dist/index.js",
-  "scripts": {
-    "dev": "vite",
-    "prebuild": "pnpm --filter @okmtyuta/packages.lib.okmtyuta.phd build",
-    "build:theme": "pnpm tsx ./src/build.ts",
-    "build:script": "vite build && tsc && tsc-alias",
-    "build": "pnpm build:script && pnpm build:theme",
-    "build:prod": "pnpm prebuild && pnpm build:script && pnpm build:theme",
-    "preview": "vite preview",
-    "test": "pnpm vitest --watch=false",
-    "fmt": "prettier --write ."
-  },
-  "files": [
-    "dist/"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/types/index.d.ts"
-    },
-    "./styles.css": "./dist/styles.css",
-    "./reset.css": "./dist/reset.css",
-    "./components/*": "./dist/components/*"
-  },
-  "devDependencies": {
-    "@okmtyuta/packages.lib.okmtyuta.phd": "workspace:^",
-    "@types/node": "^20.11.16",
-    "tsc-alias": "^1.8.8",
-    "tsx": "^4.7.0",
-    "typescript": "^5.2.2",
-    "vite": "^5.1.0",
-    "vitest": "^1.2.2"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "@okmtyuta/packages.theme.okmtyuta.phd",
+	"version": "0.1.33",
+	"type": "module",
+	"main": "./dist/index.js",
+	"scripts": {
+		"dev": "vite",
+		"prebuild": "pnpm --filter @okmtyuta/packages.lib.okmtyuta.phd build",
+		"build:theme": "pnpm tsx ./src/build.ts",
+		"build:script": "vite build && tsc && tsc-alias",
+		"build": "pnpm build:script && pnpm build:theme",
+		"build:prod": "pnpm prebuild && pnpm build:script && pnpm build:theme",
+		"preview": "vite preview",
+		"test": "pnpm vitest --watch=false",
+		"fmt": "prettier --write ."
+	},
+	"files": ["dist/"],
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/types/index.d.ts"
+		},
+		"./styles.css": "./dist/styles.css",
+		"./reset.css": "./dist/reset.css",
+		"./components/*": "./dist/components/*"
+	},
+	"devDependencies": {
+		"@okmtyuta/packages.lib.okmtyuta.phd": "workspace:^",
+		"@types/node": "^20.11.16",
+		"tsc-alias": "^1.8.8",
+		"tsx": "^4.7.0",
+		"typescript": "^5.2.2",
+		"vite": "^5.1.0",
+		"vitest": "^1.2.2"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }

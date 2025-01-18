@@ -1,10 +1,10 @@
-import { prefixedBy } from '@src/prefixedBy'
-import { composeStyleSource } from '@src/style-source'
+import { prefixedBy } from "@src/prefixedBy"
+import { composeStyleSource } from "@src/style-source"
 
-const _prefixed = prefixedBy('paragraph')
+const _prefixed = prefixedBy("paragraph")
 
 const classes = {
-  paragraph: _prefixed()
+	paragraph: _prefixed(),
 }
 
 const styles = /* css */ `

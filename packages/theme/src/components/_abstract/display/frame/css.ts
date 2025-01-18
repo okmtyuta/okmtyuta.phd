@@ -1,10 +1,10 @@
-import { prefixedBy } from '@src/prefixedBy'
-import { composeStyleSource } from '@src/style-source'
+import { prefixedBy } from "@src/prefixedBy"
+import { composeStyleSource } from "@src/style-source"
 
-const _prefixed = prefixedBy('frame')
+const _prefixed = prefixedBy("frame")
 
 const classes = {
-  frame: _prefixed()
+	frame: _prefixed(),
 }
 
 const style = /* css */ `

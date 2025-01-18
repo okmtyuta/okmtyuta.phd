@@ -1,32 +1,32 @@
 import {
-  Hex,
-  color,
-  colors,
-  Color,
-  fromEntries,
-  toEntries
-} from '@okmtyuta/packages.lib.okmtyuta.phd'
-import { prefixedBy } from '@src/prefixedBy'
-import { composeStyleSource } from '@src/style-source'
+	Hex,
+	color,
+	colors,
+	type Color,
+	fromEntries,
+	toEntries,
+} from "@okmtyuta/packages.lib.okmtyuta.phd"
+import { prefixedBy } from "@src/prefixedBy"
+import { composeStyleSource } from "@src/style-source"
 
-const _prefixed = prefixedBy('ripple')
+const _prefixed = prefixedBy("ripple")
 
 const baseClasses = {
-  ripple: _prefixed(),
-  effect: _prefixed('effect'),
-  light: _prefixed('light'),
-  dark: _prefixed('dark')
+	ripple: _prefixed(),
+	effect: _prefixed("effect"),
+	light: _prefixed("light"),
+	dark: _prefixed("dark"),
 } as const
 
 const colorEntries: [Color, string][] = colors.map((color) => [
-  color,
-  _prefixed(color)
+	color,
+	_prefixed(color),
 ])
 const colorClasses = fromEntries(colorEntries)
 
 const classes = {
-  ...baseClasses,
-  ...colorClasses
+	...baseClasses,
+	...colorClasses,
 }
 
 const baseStyle = /* css */ `
@@ -50,15 +50,15 @@ const baseStyle = /* css */ `
 `
 
 const colorStyle = toEntries(color)
-  .map(([key, code]) => {
-    const hex = new Hex(code)
-    const colorClass = classes[key]
+	.map(([key, code]) => {
+		const hex = new Hex(code)
+		const colorClass = classes[key]
 
-    if (!colorClass) {
-      return ''
-    }
+		if (!colorClass) {
+			return ""
+		}
 
-    const style = /* css */ `
+		const style = /* css */ `
     .${classes.ripple}.${colorClass}.${classes.light} {
       background-color: ${hex.lighten(0.9).hexString};
     }
@@ -66,9 +66,9 @@ const colorStyle = toEntries(color)
       background-color: ${hex.lighten(0.5).hexString};
     }
     `
-    return style
-  })
-  .join(' ')
+		return style
+	})
+	.join(" ")
 
-const style = [baseStyle, colorStyle].join(' ')
+const style = [baseStyle, colorStyle].join(" ")
 export const ripple = composeStyleSource(classes, style)

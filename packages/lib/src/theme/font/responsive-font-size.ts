@@ -1,7 +1,7 @@
-import { FontSizeType, fontSize } from './font-size'
+import { type FontSizeType, fontSize } from "./font-size"
 
 export const responsiveFontSize = (fontSizeType: FontSizeType) => {
-  const style = /* css */ `
+	const style = /* css */ `
     /* mobile */
     @media screen and (max-width: 767px) {
       font-size: ${fontSize[fontSizeType].sp}px;
@@ -18,5 +18,5 @@ export const responsiveFontSize = (fontSizeType: FontSizeType) => {
     }
   `
 
-  return style
+	return style
 }

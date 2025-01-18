@@ -1,22 +1,22 @@
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
+import { defineConfig } from "vite";
+import { resolve } from "path";
 
 export default defineConfig({
-  resolve: {
-    alias: {}
-  },
-  build: {
-    outDir: 'dist',
-    lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: 'index',
-      fileName: 'index'
-    },
-    rollupOptions: {
-      external: [],
-      output: {
-        globals: {}
-      }
-    }
-  }
-})
+	resolve: {
+		alias: {},
+	},
+	build: {
+		outDir: "dist",
+		lib: {
+			entry: resolve(__dirname, "src/index.ts"),
+			name: "index",
+			fileName: "index",
+		},
+		rollupOptions: {
+			external: [],
+			output: {
+				globals: {},
+			},
+		},
+	},
+});

@@ -1,4 +1,4 @@
-import { composeStyleSource } from '@src/style-source'
+import { composeStyleSource } from "@src/style-source"
 
 const style = /* css */ `
 *:where(

@@ -1,16 +1,16 @@
-import { Hex, color } from '@okmtyuta/packages.lib.okmtyuta.phd'
-import { prefixedBy } from '@src/prefixedBy'
-import { composeStyleSource } from '@src/style-source'
+import { Hex, color } from "@okmtyuta/packages.lib.okmtyuta.phd"
+import { prefixedBy } from "@src/prefixedBy"
+import { composeStyleSource } from "@src/style-source"
 
-const _prefixed = prefixedBy('list-item')
+const _prefixed = prefixedBy("list-item")
 
 const classes = {
-  listItem: _prefixed(),
-  marker: _prefixed('marker'),
-  disc: _prefixed('disc')
+	listItem: _prefixed(),
+	marker: _prefixed("marker"),
+	disc: _prefixed("disc"),
 }
 const property = {
-  discColor: new Hex(color.neutral).darken(0.5).hexString
+	discColor: new Hex(color.neutral).darken(0.5).hexString,
 }
 
 const styles = /* css */ `

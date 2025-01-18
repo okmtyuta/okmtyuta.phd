@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "build:packages:lib": "pnpm --filter @okmtyuta/apps.about.client astro",
-    "build:packages:theme": "pnpm --filter @okmtyuta/apps.about.client astro",
-    "build:apps:about:client": "pnpm --filter @okmtyuta/apps.about.client build"
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  }
 }

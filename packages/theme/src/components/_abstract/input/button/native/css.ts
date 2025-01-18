@@ -1,32 +1,32 @@
 import {
-  Color,
-  color,
-  colors,
-  fromEntries,
-  Hex,
-  toEntries
-} from '@okmtyuta/packages.lib.okmtyuta.phd'
-import { prefixedBy } from '@src/prefixedBy'
-import { composeStyleSource } from '@src/style-source'
+	type Color,
+	color,
+	colors,
+	fromEntries,
+	Hex,
+	toEntries,
+} from "@okmtyuta/packages.lib.okmtyuta.phd"
+import { prefixedBy } from "@src/prefixedBy"
+import { composeStyleSource } from "@src/style-source"
 
-const _prefixed = prefixedBy('native-button')
+const _prefixed = prefixedBy("native-button")
 
 const baseClasses = {
-  nativeButton: _prefixed(),
-  standard: _prefixed('standard'),
-  filled: _prefixed('filled'),
-  outlined: _prefixed('outlined')
+	nativeButton: _prefixed(),
+	standard: _prefixed("standard"),
+	filled: _prefixed("filled"),
+	outlined: _prefixed("outlined"),
 } as const
 
 const colorEntries: [Color, string][] = colors.map((color) => [
-  color,
-  _prefixed(color)
+	color,
+	_prefixed(color),
 ])
 const colorClasses = fromEntries(colorEntries)
 
 const classes = {
-  ...baseClasses,
-  ...colorClasses
+	...baseClasses,
+	...colorClasses,
 }
 
 const baseStyle = /* css */ `
@@ -64,24 +64,24 @@ const baseStyle = /* css */ `
 // }
 
 const colorStyle = toEntries(color)
-  .map(([key, code]) => {
-    const hex = new Hex(code)
+	.map(([key, code]) => {
+		const hex = new Hex(code)
 
-    const colorClass = classes[key]
+		const colorClass = classes[key]
 
-    if (!colorClass) {
-      return ''
-    }
+		if (!colorClass) {
+			return ""
+		}
 
-    const style = /* css */ `
+		const style = /* css */ `
     .${classes.nativeButton}.${classes.filled}.${colorClass}:not(:disabled) {
       border: none;
       color: white;
       background-color: ${hex.hexString};
     }
     .${classes.nativeButton}.${
-      classes.filled
-    }.${colorClass}:not(:disabled):hover {
+			classes.filled
+		}.${colorClass}:not(:disabled):hover {
       background-color: ${hex.lighten(0.1).hexString};
     }
 
@@ -91,8 +91,8 @@ const colorStyle = toEntries(color)
       background-color: inherit;
     }
     .${classes.nativeButton}.${
-      classes.outlined
-    }.${colorClass}:not(:disabled):hover {
+			classes.outlined
+		}.${colorClass}:not(:disabled):hover {
       background-color: ${hex.lighten(0.95).hexString};
     }
 
@@ -102,14 +102,14 @@ const colorStyle = toEntries(color)
       background-color: transparent;
     }
     .${classes.nativeButton}.${
-      classes.standard
-    }.${colorClass}:not(:disabled):hover {
+			classes.standard
+		}.${colorClass}:not(:disabled):hover {
       background-color: ${hex.lighten(0.95).hexString};
     }
     `
-    return style
-  })
-  .join(' ')
+		return style
+	})
+	.join(" ")
 
-const style = [baseStyle, colorStyle].join(' ')
+const style = [baseStyle, colorStyle].join(" ")
 export const nativeButton = composeStyleSource(classes, style)

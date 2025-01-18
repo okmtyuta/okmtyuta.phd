@@ -1,14 +1,14 @@
-import { prefixedBy } from '@src/prefixedBy'
-import { composeStyleSource } from '@src/style-source'
+import { prefixedBy } from "@src/prefixedBy"
+import { composeStyleSource } from "@src/style-source"
 
-const _prefixed = prefixedBy('link')
+const _prefixed = prefixedBy("link")
 
 const classes = {
-  link: _prefixed(),
-  underline: {
-    always: _prefixed('always'),
-    hover: _prefixed('hover')
-  }
+	link: _prefixed(),
+	underline: {
+		always: _prefixed("always"),
+		hover: _prefixed("hover"),
+	},
 }
 
 const style = /* css */ `

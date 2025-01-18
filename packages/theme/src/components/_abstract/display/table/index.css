@@ -1,35 +1,35 @@
 .area {
-  margin: 40px;
+	margin: 40px;
 }
 .table {
-  /* border-top: solid rgba(224, 224, 224, 1) 1px;
+	/* border-top: solid rgba(224, 224, 224, 1) 1px;
   border-left: solid rgba(224, 224, 224, 1) 1px;
   border-right: solid rgba(224, 224, 224, 1) 1px; */
 }
 .table-head {
-  border-bottom: solid rgba(224, 224, 224, 1) 1px;
-  padding: 16px;
-  font-weight: bold;
+	border-bottom: solid rgba(224, 224, 224, 1) 1px;
+	padding: 16px;
+	font-weight: bold;
 }
 .table-row {
-  border-bottom: solid rgba(224, 224, 224, 1) 1px;
+	border-bottom: solid rgba(224, 224, 224, 1) 1px;
 }
 .table-data {
-  padding: 16px;
+	padding: 16px;
 }
 .numeral {
-  text-align: right;
+	text-align: right;
 }
 .sticky {
-  position: sticky;
-  top: 0;
-  box-sizing: content-box;
-  border-bottom: solid rgba(224, 224, 224, 1) 1px;
-  border-top: solid rgba(224, 224, 224, 1) 1px;
-  background-color: white;
-  display: table-header-group;
+	position: sticky;
+	top: 0;
+	box-sizing: content-box;
+	border-bottom: solid rgba(224, 224, 224, 1) 1px;
+	border-top: solid rgba(224, 224, 224, 1) 1px;
+	background-color: white;
+	display: table-header-group;
 }
 .root {
-  height: 200px;
-  overflow: scroll;
+	height: 200px;
+	overflow: scroll;
 }

@@ -1,4 +1,4 @@
-import { HexString } from '../types/HexString'
+import type { HexString } from "../types/HexString"
 
 /**
  * Check whether source is HexString.
@@ -6,18 +6,18 @@ import { HexString } from '../types/HexString'
  * @returns {boolean} Whether source is HexString or not.
  */
 export const isHexString = (source: unknown): source is HexString => {
-  if (typeof source !== 'string') {
-    return false
-  }
-  if (!source.startsWith('#')) {
-    return false
-  }
+	if (typeof source !== "string") {
+		return false
+	}
+	if (!source.startsWith("#")) {
+		return false
+	}
 
-  const hexRegExp = new RegExp('^#[0-9a-fA-F]{6}$')
+	const hexRegExp = /^#[0-9a-fA-F]{6}$/
 
-  if (!hexRegExp.test(source)) {
-    return false
-  }
+	if (!hexRegExp.test(source)) {
+		return false
+	}
 
-  return true
+	return true
 }

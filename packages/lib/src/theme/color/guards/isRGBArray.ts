@@ -1,16 +1,16 @@
-import { RGBArray } from '../types/RGBArray'
+import type { RGBArray } from "../types/RGBArray"
 
 const isThreeItemsIntegerArray = (
-  source: unknown
+	source: unknown,
 ): source is [number, number, number] => {
-  if (!Array.isArray(source)) {
-    return false
-  }
-  if (source.length !== 3) {
-    return false
-  }
+	if (!Array.isArray(source)) {
+		return false
+	}
+	if (source.length !== 3) {
+		return false
+	}
 
-  return source.every((element) => typeof element === 'number')
+	return source.every((element) => typeof element === "number")
 }
 
 /**
@@ -19,9 +19,9 @@ const isThreeItemsIntegerArray = (
  * @returns {boolean} Whether source is RGBArray or not.
  */
 export const isRGBArray = (source: unknown): source is RGBArray => {
-  if (!isThreeItemsIntegerArray(source)) {
-    return false
-  }
+	if (!isThreeItemsIntegerArray(source)) {
+		return false
+	}
 
-  return source.every((item) => 0 <= item && item <= 255)
+	return source.every((item) => 0 <= item && item <= 255)
 }

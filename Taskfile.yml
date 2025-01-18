@@ -9,11 +9,13 @@ tasks:
   format:
     desc: format code
     cmds:
-      - uv run ruff format src tests
+      - uv run ruff format apps
+      - pnpm biome format --write apps packages
   lint:
     desc: lint code
     cmds:
-      - uv run ruff check --fix src tests
+      - uv run ruff check --fix apps
+      - pnpm biome lint --write apps packages
   typecheck:
     desc: typecheck
     cmds:
@@ -25,20 +27,3 @@ tasks:
       - task lint
       # - task typecheck
 
-  dev:app:survey:api:
-    desc: qualify code
-    dir: apps/survey/api
-    cmds:
-      - uv run -m app.main
-
-  dev:app:survey:client:
-    desc: qualify code
-    dir: apps/survey/client
-    cmds:
-      - pnpm --filter @okmtyuta/survey.client dev
-
-  dev:app:about:client:
-    desc: qualify code
-    dir: apps/about/client
-    cmds:
-      - pnpm dev

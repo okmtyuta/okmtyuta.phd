@@ -1,15 +1,15 @@
-import { prefixedBy } from '@src/prefixedBy'
-import { composeStyleSource } from '@src/style-source'
+import { prefixedBy } from "@src/prefixedBy"
+import { composeStyleSource } from "@src/style-source"
 
-const _prefixed = prefixedBy('skeleton')
+const _prefixed = prefixedBy("skeleton")
 
 const classes = {
-  skeleton: _prefixed(),
-  text: _prefixed('text'),
-  circle: _prefixed('circle'),
-  rectangle: _prefixed('rectangle'),
-  rounded: _prefixed('rounded'),
-  effect: _prefixed('effect')
+	skeleton: _prefixed(),
+	text: _prefixed("text"),
+	circle: _prefixed("circle"),
+	rectangle: _prefixed("rectangle"),
+	rounded: _prefixed("rounded"),
+	effect: _prefixed("effect"),
 }
 
 const style = /* css */ `

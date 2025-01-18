@@ -1,10 +1,10 @@
-import { prefixedBy } from '@src/prefixedBy'
-import { composeStyleSource } from '@src/style-source'
+import { prefixedBy } from "@src/prefixedBy"
+import { composeStyleSource } from "@src/style-source"
 
-const _prefixed = prefixedBy('list')
+const _prefixed = prefixedBy("list")
 
 const classes = {
-  list: _prefixed('list')
+	list: _prefixed("list"),
 }
 
 const styles = /* css */ `
