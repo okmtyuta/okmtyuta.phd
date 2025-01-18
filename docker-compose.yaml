@@ -1,0 +1,10 @@
+services:
+  survey-api:
+    build:
+      context: .
+      dockerfile: ./apps/survey/api/Dockerfile
+    tty: true
+    volumes:
+      - .:/project
+    ports:
+      - 5000:5000

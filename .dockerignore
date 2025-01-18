@@ -1,0 +1,15 @@
+.git
+.gitignore
+.DS_Store
+.dockerignore
+Dockerfile
+.python-version
+
+# compiled
+__pycache__
+
+# environments
+.venv
+
+# mypy
+.mypy_cache

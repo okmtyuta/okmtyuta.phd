@@ -1,0 +1,4 @@
+packages:
+  - 'apps/survey/client'
+  - 'apps/about/client'
+  - 'packages/components/astro'

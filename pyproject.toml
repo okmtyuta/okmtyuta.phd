@@ -1,0 +1,23 @@
+[project]
+name = "okmtyuta-phd"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.2",
+]
+
+[tool.uv.workspace]
+members = ["apps/survey/api"]
+
+[tool.ruff.lint]
+select = ["F", "I"]
+ignore = ['E203']
+
+[tool.ruff]
+line-length = 120
+indent-width = 4

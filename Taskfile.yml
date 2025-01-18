@@ -1,0 +1,38 @@
+version: "3"
+
+tasks:
+  default:
+    desc: show commands
+    cmds:
+      - task -l --sort none
+
+  format:
+    desc: format code
+    cmds:
+      - uv run ruff format src tests
+  lint:
+    desc: lint code
+    cmds:
+      - uv run ruff check --fix src tests
+  typecheck:
+    desc: typecheck
+    cmds:
+      - uv run mypy src --ignore-missing-imports
+  qualify:
+    desc: qualify code
+    cmds:
+      - task format
+      - task lint
+      # - task typecheck
+
+  dev:app:survey:api:
+    desc: qualify code
+    dir: apps/survey/api
+    cmds:
+      - uv run -m app.main
+
+  dev:app:survey:client:
+    desc: qualify code
+    dir: apps/survey/client
+    cmds:
+      - pnpm --filter @okmtyuta/survey.client dev
