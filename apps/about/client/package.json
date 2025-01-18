@@ -1,15 +1,19 @@
 {
-  "name": "apps-about",
+  "name": "@okmtyuta/apps.about.client",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build:lib": "pnpm --filter @okmtyuta/packages.lib.okmtyuta.phd build",
+    "build:theme": "pnpm --filter @okmtyuta/packages.theme.okmtyuta.phd build",
+    "prebuild": "pnpm build:lib && pnpm build:theme",
+    "build": "pnpm prebuild && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "astro": "^5.1.7",
-    "@okmtyuta/packages.components.astro.okmtyuta.phd": "workspace:^"
+    "@okmtyuta/packages.components.astro.okmtyuta.phd": "workspace:^",
+    "@okmtyuta/packages.theme.okmtyuta.phd": "workspace:^"
   }
 }

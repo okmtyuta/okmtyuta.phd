@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 
 tasks:
   default:
@@ -36,3 +36,9 @@ tasks:
     dir: apps/survey/client
     cmds:
       - pnpm --filter @okmtyuta/survey.client dev
+
+  dev:app:about:client:
+    desc: qualify code
+    dir: apps/about/client
+    cmds:
+      - pnpm dev

@@ -4,7 +4,8 @@ import {
   Footer,
   Frame
 } from '@okmtyuta/packages.components.astro.okmtyuta.phd'
-import './reset.css'
+
+import '@okmtyuta/packages.theme.okmtyuta.phd/reset.css'
 
 interface Props {
   title: string
@@ -26,7 +27,7 @@ const { title } = Astro.props
 
   <body>
     <main>
-      <Header>about.me.okmtyuta.phd</Header>
+      <Header>about.okmtyuta.phd</Header>
 
       <Frame>
         <slot />

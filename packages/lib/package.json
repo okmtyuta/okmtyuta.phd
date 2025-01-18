@@ -1,0 +1,30 @@
+{
+  "name": "@okmtyuta/packages.lib.okmtyuta.phd",
+  "version": "0.1.33",
+  "type": "module",
+  "scripts": {
+    "build": "vite build && tsc && tsc-alias",
+    "test": "pnpm vitest --watch=false --typecheck",
+    "fmt": "prettier --write ."
+  },
+  "files": [
+    "dist/"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.16",
+    "tsc-alias": "^1.8.8",
+    "tsx": "^4.7.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0",
+    "vitest": "^1.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:packages:lib": "pnpm --filter @okmtyuta/apps.about.client astro",
+    "build:packages:theme": "pnpm --filter @okmtyuta/apps.about.client astro",
+    "build:apps:about:client": "pnpm --filter @okmtyuta/apps.about.client build"
   },
   "keywords": [],
   "author": "",
